@@ -1,5 +1,3 @@
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
 window.initCustomSubtitles = function (playerId, videoId, subtitleData) {
     let player;
     let rafId = null;
@@ -87,28 +85,4 @@ function updateSubtitle() {
         window.onYouTubeIframeAPIReady = createPlayer;
     }
 };
-</script>
 
-<style>
-/* 共通デザイン：サイバーパンク風 */
-.yt-sub-container { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; margin-bottom: 1em; }
-.subtitle-overlay {
-    position: absolute; top: 12%; left: 5%; right: 5%;
-    text-align: center; color: white; font-weight: normal;
-    
-    background: rgba(0,0,0,0.6); padding: 8px; border-radius: 4px;
-    pointer-events: none; display: none; z-index: 10;
-    justify-content: center; align-items: center; min-height: 1.5em;
-}
-
-.subtitle-overlay span {
-    opacity:0;
-    transform:translateY(20px);
-    transition:all .35s ease;
-}
-
-.subtitle-overlay span.show {
-    opacity:1;
-    transform:translateY(0);
-}
-</style>
