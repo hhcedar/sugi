@@ -1,20 +1,46 @@
-.yt-sub-container { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; margin-bottom: 1em; }
+.yt-sub-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #000;
+    margin-bottom: 1em;
+}
+
 .subtitle-overlay {
-    position: absolute; top: 12%; left: 5%; right: 5%;
-    text-align: center; color: white; font-weight: normal;
-    
-    background: rgba(0,0,0,0.6); padding: 8px; border-radius: 4px;
-    pointer-events: none; display: none; z-index: 10;
-    justify-content: center; align-items: center; min-height: 1.5em;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-weight: normal;
+
+    padding: 8px;
+    padding-bottom: 16px;
+    border-radius: 4px;
+    pointer-events: none;
+    display: block;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    min-height: 1.5em;
+    background: rgba(0, 0, 0, 0.9);
 }
 
-.subtitle-overlay span {
-    opacity:0;
-    transform:translateY(20px);
-    transition:all .35s ease;
+.subtitle-overlay .sub {
+    opacity: 0.1;
+    color: white;
+    text-shadow:1px 1px 5px #ddd;
+    transform: translateY(8px) scale(0.98);
+    /* transition: opacity .52s ease-out, transform .52s ease-out; */
+    transition: opacity 1s linear,transform .52s ease-out;
 }
 
-.subtitle-overlay span.show {
-    opacity:1;
-    transform:translateY(0);
+.subtitle-overlay .sub.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.subtitle-overlay .sub.hide {
+    opacity: 0;
+    /* transform: translateY(8px) scale(0.98); */
 }
